@@ -20,6 +20,7 @@ namespace App\Libraries;
  /**
  * Constans
  **/
+ 
  //Error Correcction Level
  define("ECL_L",1); define("L",1);
  define("ECL_M",0); define("M",0);
