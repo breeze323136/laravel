@@ -6,7 +6,6 @@
  *  To     : www.sexyphp.com
  */
 
-
 //1、laravel内置的分页，laravel数据库查询方法 get(),改为paginate(分页数)就行，超级简单吧
 
 return DB::table('pay_list')->where('tel', $tel)->orderBy('create_time','DESC')->get();
