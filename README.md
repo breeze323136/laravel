@@ -1,7 +1,10 @@
-# laravel
-#常用的一些类库，基于Laravel框架中编写的，稍微修改可以符合任何一个框架对这些类的使用。
 
-#<?php
+##laravel常用的一些类库，基于Laravel框架中编写的，稍微修改可以符合任何一个框架对这些类的使用。
+
+[TOC]
+####1、发送邮件类的使用
+```
+<?php
 /*
  * 发送邮件类的使用
  */
@@ -28,14 +31,15 @@ class Demo{
         }
     }
 }
-#?>
+?>
+```
 
 
 
 
-
-
-#<?php
+####2、七牛上传类的使用
+```
+<?php
 /*
  * 七牛上传类的使用
  * 使用例子
@@ -52,10 +56,13 @@ class Demo{
    }
  }
 
-#?>
+?>
+```
 
 
-#<?php
+####3、生成二维码类的使用
+```
+<?php
 /*
  * 生成二维码类的使用
  */
@@ -85,11 +92,13 @@ class Demo{
 	*/
 }
 
-#?>
+?>
+```
 
 
-
-#<?php
+####4、分页
+```
+<?php
 /*
  * 2、我们公司常用的分页，可使用于Web分页，接口分页等。只推荐在接口中的分页,Web使用laravel的即可
  * 我们仅作为一个方法来使用，如果项目涉及分页多你可以放在基类，如果一般，可以独立成类，如果比一般低点，需要用到分页的控制器加上此方法即可。
@@ -132,7 +141,86 @@ class ChannelModel(){
 	}
 }
 
-#?>
+?>
+```
+
+
+####5、ACE点击更换头像(文件上传)
+```
+use App\Libraries\ClickUpload;  //点击图像上传
+/*
+ * 点击更换头像
+ * PHP上传图片插件，主要用于ace的点击图片上传，适合前台，手机网页和后台的点击图片上传使用。
+ * 最明显的使用案例是更换用户头像
+ * 请查看fileUpload的使用
+ */
+	public function anyEditHeader(){
+
+		sleep(1);//to simulate some delay for local host
+
+		$ajax   = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']==='XMLHttpRequest';
+
+		$result = array();
+		$file   = $_FILES['avatar'];
+		$click      = new ClickUpload();
+		if( is_string($file['name']) ) {
+
+			$result[]       = $click->validateAndSave($file);
+		}
+		else if( is_array($file['name']) ) {
+			$file_count     = count($file['name']);
+
+			for($i = 0; $i < $file_count; $i++) {
+				$file_info  = array(
+					'name'     => $file['name'][$i],
+					'type'     => $file['type'][$i],
+					'size'     => $file['size'][$i],
+					'tmp_name' => $file['tmp_name'][$i],
+					'error'    => $file['error'][$i]
+				);
+
+				$result[]   = $click->validateAndSave($file_info);
+			}
+		}
+
+		$userM              = new UserModel();
+		$userM->getEditHeader($this->loginUser->shop_id,$result[0]['url']);
+		$result = json_encode($result);
+		if($ajax) {
+			echo $result;
+		}
+		else {
+			echo '<script language="javascript" type="text/javascript">';
+			echo 'window.top.window.jQuery("#'.$_POST['temporary-iframe-id'].'").data("deferrer").resolve('.$result.');';
+			echo '</script>';
+		}
+
+	}
+```
+
+
+####6、微信移动支付
+```
+	请查看weixinpay目录相关说明
+```
+
+
+####7、支付宝移动支付和手机网站支付
+```
+	请查看alipay目录相关说明
+```
+
+
+####8、账务明细分页查询接口接入页
+```
+	请查看alipayAccount目录相关说明
+```
+
+
+
+
+
+
 
 
 
