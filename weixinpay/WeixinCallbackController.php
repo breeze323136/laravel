@@ -7,7 +7,6 @@
  *@copyright shinc
  */
 namespace  Laravel\Controller\Callback; //定义命名空间
-
 use ApiController;							//引入接口公共父类，用于继承
 use Illuminate\Support\Facades\Log;
 use Laravel\Service\JnlService;

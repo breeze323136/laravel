@@ -287,6 +287,5 @@ class Smtp
             echo $message; 
         } 
     } 
-
 } 
 ?>

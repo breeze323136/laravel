@@ -5,6 +5,7 @@
  * author: liangfeng@shinc.net
  * from  : http://www.sexyphp.com
  */
+ 
 namespace App\Libraries;
 use App\Libraries\Qiniu\Auth;		//引入七牛
 use Illuminate\Support\Facades\Config;   //引入配置文件

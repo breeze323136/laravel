@@ -120,5 +120,6 @@ class ClickUpload{
 		imagedestroy($image);
 
 		return $ret;
+		
 	}
 }

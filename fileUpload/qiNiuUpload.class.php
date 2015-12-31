@@ -47,7 +47,6 @@ class QiNiuUpload{
 		$expires	= Config::get('app.qiniu_expires');
 
 		$qiniu	= new Auth($accessKey , $secretKey);
-
 		$data['uptoken'] = $qiniu->uploadToken($image , '' , $expires);
 
 		return Response::json($data);
