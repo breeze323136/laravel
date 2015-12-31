@@ -1,6 +1,7 @@
 <?php
 /*
- * 接口控制器基类
+ * API接口控制器基类
+ *
  */
 use Illuminate\Support\Facades\Input;
 class ApiController extends BaseController {
