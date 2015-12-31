@@ -2,7 +2,8 @@
 /*
  * 七牛上传，从服务器层(控制器或模型)上传使用类
  * 独立配置信息：laravel框架中的使用：confing/app.php中配置
- * author:liangfeng@shinc.net
+ * author: liangfeng@shinc.net
+ * from  : http://www.sexyphp.com
  */
 namespace App\Libraries;
 use App\Libraries\Qiniu\Auth;		//引入七牛
@@ -71,22 +72,5 @@ class QiNiuUpload{
 	}
 }
 
-
-
-<?php
-/*
- * 使用例子
- */
- namespace Laravel\Controller;
- use App\Libraries\QiNiuUpload;
- class ChannelController extends AdminController {
-   public function anyIndex(){
-      //二维码图片名
-      $qrCodeImg      = 'DBH'.date('YmdHis').rand(000000,999999).'.png';
-      $dirname        = $_SERVER['DOCUMENT_ROOT'].'/upload/img/';
-      $qiniu          = new QiNiuUpload();
-      $qiniu->fileUpload($qrCodeImg,$dirname);
-   }
- }
 
  

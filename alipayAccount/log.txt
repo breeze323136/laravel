@@ -1,0 +1,42 @@
+执行日期：20151028173634
+<?xml version="1.0" encoding="utf-8"?>
+<alipay>
+	<is_success>T</is_success>
+	<request>
+		<param name="sign">b0093afcb236a5ff47b94ff0de727d76</param>
+		<param name="_input_charset">utf-8</param>
+		<param name="gmt_end_time">2015-10-20 00:00:00</param>
+		<param name="sign_type">MD5</param>
+		<param name="service">account.page.query</param>
+		<param name="partner"></param>
+		<param name="page_no">10000</param>
+		<param name="gmt_start_time">2015-10-19 00:00:00</param>
+	</request>
+		<response>
+			<account_page_query_result>
+				<account_log_list>
+					<AccountQueryAccountLogVO>
+						<balance>11.04</balance>
+						<buyer_account></buyer_account>
+						<currency>156</currency>
+						<deposit_bank_no> </deposit_bank_no>
+						<goods_title>Apple MacBook Pro 15.4英寸笔记本</goods_title>
+						<income>0.01</income>
+						<iw_account_log_id></iw_account_log_id>
+						<memo> </memo>
+						<merchant_out_order_no>1019102531-1486</merchant_out_order_no>
+						<outcome>0.00</outcome>
+						<partner_id></partner_id>
+						<rate>0</rate>
+						<seller_account></seller_account>
+						<seller_fullname></seller_fullname>
+						<service_fee>0.00</service_fee>
+						<service_fee_ratio> </service_fee_ratio>
+						<sign_product_name>快捷手机安全支付</sign_product_name>
+						<sub_trans_code_msg>快速支付,支付给个人，支付宝帐户全额</sub_trans_code_msg>
+						<total_fee>0.01</total_fee>
+						<trade_no></trade_no>
+						<trade_refund_amount>0.00</trade_refund_amount>
+						<trans_code_msg>在线支付</trans_code_msg>
+						<trans_date>2015-10-19 10:25:45</trans_date>
+						</AccountQueryAccountLogVO><AccountQueryAccountLogVO>
